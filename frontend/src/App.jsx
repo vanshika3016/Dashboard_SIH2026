@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Dashboard'
+import Cameras from './pages/Cameras'
 
 function ComingSoon({ title }) {
   return (
@@ -25,7 +26,7 @@ function App() {
           <main className="mx-auto max-w-[1600px] px-4 pb-10 pt-6 sm:px-6 lg:px-8">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/cameras" element={<ComingSoon title="Camera Network" />} />
+              <Route path="/cameras" element={<Cameras />} />
               <Route path="/alerts" element={<ComingSoon title="Alert Command" />} />
               <Route path="/map" element={<ComingSoon title="Border Map" />} />
               <Route path="/settings" element={<ComingSoon title="System Settings" />} />
