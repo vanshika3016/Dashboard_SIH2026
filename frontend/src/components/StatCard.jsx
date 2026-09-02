@@ -1,0 +1,4 @@
+export default function StatCard({ label, value, detail, icon: Icon, tone = 'cyan' }) {
+  const colors = { cyan: 'text-cyan-300 bg-cyan-400/10', red: 'text-red-300 bg-red-400/10', emerald: 'text-emerald-300 bg-emerald-400/10', amber: 'text-amber-300 bg-amber-400/10' }
+  return <article className="border border-white/[0.07] bg-[#0d1217] p-5"><div className="flex items-start justify-between"><p className="text-[11px] font-bold uppercase tracking-[0.13em] text-slate-500">{label}</p><span className={`rounded-md p-2 ${colors[tone]}`}><Icon size={17} /></span></div><p className="mt-5 font-display text-4xl font-semibold tracking-wide text-white">{value}</p><p className="mt-1 text-xs text-slate-500">{detail}</p></article>
+}

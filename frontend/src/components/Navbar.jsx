@@ -1,0 +1,8 @@
+import { Bell, Menu } from 'lucide-react'
+import { useEffect, useState } from 'react'
+
+export default function Navbar() {
+  const [now, setNow] = useState(new Date())
+  useEffect(() => { const timer = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(timer) }, [])
+  return <header className="sticky top-0 z-10 border-b border-white/[0.07] bg-[#070a0d]/95 backdrop-blur"><div className="flex h-[76px] items-center justify-between px-4 sm:px-6 lg:px-8"><button className="rounded p-2 text-slate-400 hover:bg-white/5 lg:hidden" aria-label="Open navigation"><Menu size={20} /></button><div className="hidden items-center gap-2 text-xs font-semibold text-emerald-400 sm:flex"><span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" /> SYSTEM ONLINE</div><div className="ml-auto flex items-center gap-5"><div className="hidden text-right sm:block"><p className="text-sm font-medium text-slate-200">{now.toLocaleDateString('en-IN', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' })}</p><p className="font-mono text-[11px] text-slate-500">{now.toLocaleTimeString('en-IN', { hour12: false })} IST</p></div><button className="relative rounded-md p-2 text-slate-400 hover:bg-white/5 hover:text-white" aria-label="View alerts"><Bell size={19} /><span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] font-bold text-white">3</span></button><div className="hidden h-8 w-px bg-white/10 sm:block" /><div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400/15 text-xs font-bold text-cyan-300">OP</div></div></div></header>
+}
