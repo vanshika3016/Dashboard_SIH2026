@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Dashboard'
 import Cameras from './pages/Cameras'
+import Settings from './pages/Settings'
 
 function ComingSoon({ title }) {
   return (
@@ -29,7 +30,7 @@ function App() {
               <Route path="/cameras" element={<Cameras />} />
               <Route path="/alerts" element={<ComingSoon title="Alert Command" />} />
               <Route path="/map" element={<ComingSoon title="Border Map" />} />
-              <Route path="/settings" element={<ComingSoon title="System Settings" />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
